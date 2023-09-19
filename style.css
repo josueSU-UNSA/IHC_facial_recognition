@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -7,6 +8,8 @@ body {
 }
 
 header {
+  background-color: #ff007f;
+
   background-color: #333;
   color: white;
   padding: 10px 0;
@@ -14,7 +17,7 @@ header {
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse; 
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
@@ -25,12 +28,15 @@ header {
 }
 
 #video-container {
+  flex: 1; 
+  margin-left: 20px; 
+
   margin: 20px 0;
 }
 
 #results-container {
+  flex: 1; 
   text-align: left;
-  margin-top: 20px;
 }
 
 #video-container video {
@@ -41,19 +47,17 @@ header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-#results-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 #results-container>div {
-  flex: 1;
   padding: 10px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-left: 10px; 
   margin-bottom: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#emotion-histogram {
+  width: 100%; 
+
 }
