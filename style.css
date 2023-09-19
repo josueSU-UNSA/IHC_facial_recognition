@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color:dimgrey;
+  background-color: #ff007f; /* Cambia el color a rojo ginda */
   color: white;
   padding: 10px 0;
 }
@@ -26,6 +26,9 @@ header {
 
 #video-container {
   margin: 20px 0;
+  border: 2px solid #ff007f; /* Bordea el contenedor del video con color rojo ginda */
+  border-radius: 10px;
+  padding: 10px;
 }
 
 #results-container {
@@ -55,5 +58,12 @@ header {
   border-radius: 5px;
   margin-right: 10px;
   margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#video-container video {
+  width: 100%;
+  max-width: 800px; /* Aumenta el ancho máximo para hacer la cámara más grande */
+  height: auto;
+  border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }

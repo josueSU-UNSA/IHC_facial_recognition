@@ -7,6 +7,8 @@
   <title>Reconocimiento Facial</title>
   <meta name="mphtools-feature" content="compatibilityUI, cameraPrivacyPopup, compatibilityAutoCheck">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -22,6 +24,10 @@
       <div id="gender">Género: -</div>
       <div id="emotion">Emoción Predominante: </div>
     </div>
+    <div id="histogram-container">
+      <canvas id="emotion-histogram"></canvas>
+    </div>
+    
   </div>
 
   <script src="https://sdk.morphcast.com/mphtools/v1.0/mphtools.js"></script>
