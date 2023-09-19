@@ -6,34 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reconocimiento Facial</title>
   <meta name="mphtools-feature" content="compatibilityUI, cameraPrivacyPopup, compatibilityAutoCheck">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-  <header>
-    <h1>Reconocimiento Facial</h1>
+  <header class="bg-dark text-white py-3">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <h1>Reconocimiento Facial</h1>
+        </div>
+        <div class="col-4">
+          <div class="row justify-content-around mt-1">
+            <a href="emotion_game.html" class="btn btn-success col-md-3">Emosión</a>
+            <a href="face_game.html" class="btn btn-success col-md-3">Rostro</a>
+            <a href="index.html" class="btn btn-success col-md-3">Inicio</a>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
   </header>
-  <div class="container">
-    <div id="video-container">
-      <video id="camera" autoplay playsinline></video>
+
+  <div class="container my-5 border">
+    <div class="row">
+      <div class="col-md-12 my-4 d-flex justify-content-center">
+        <div id="video-container" class="mb-4 col-md-4">
+          <video id="camera" autoplay playsinline class="w-100 rounded shadow"></video>
+        </div>
+      </div>
     </div>
-    <div id="results-container">
-      <div id="age">Edad: -</div>
-      <div id="gender">Género: -</div>
-      <div id="emotion">Emoción Predominante: </div>
+    <div class="row">
+      <div class="col-md-12 mb-2 d-flex justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div id="age" class="p-3 bg-light rounded shadow">Edad: -</div>
+        </div>
+      </div>
+      <div class="col-md-12 mb-2 d-flex justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div id="gender" class="p-3 bg-light rounded shadow">Género: -</div>
+        </div>
+      </div>
+      <div class="col-md-12 mb-2 d-flex justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div id="emotion" class="p-3 bg-light rounded shadow">Emoción: -</div>
+        </div>
+      </div>
     </div>
-    <div id="histogram-container">
-      <canvas id="emotion-histogram"></canvas>
-    </div>
-    
   </div>
 
   <script src="https://sdk.morphcast.com/mphtools/v1.0/mphtools.js"></script>
   <script src="https://ai-sdk.morphcast.com/v1.16/ai-sdk.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <script src="script.js"></script>
-
 </body>
 
 </html>
