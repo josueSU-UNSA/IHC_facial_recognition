@@ -129,3 +129,12 @@ window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
     data: Object.values(normalizedEmotions),
   }]);
 });
+
+document.getElementById('close-button').addEventListener('click', () => {
+  alert('¡Hasta luego! Gracias por jugar.');
+  window.close();
+});
+
+document.getElementById('help-button').addEventListener('click', () => {
+  alert('¡Bienvenido! Recuerda que si estás feliz, la bolita se moverá a la derecha, pero si no es así, se moverá a la izquierda.');
+});
