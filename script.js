@@ -46,6 +46,26 @@ window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
   const emocionEnIngles = evt.detail.output.dominantEmotion;
   const emocionEnEspanol = emocionesEnEspanol[emocionEnIngles];
   emo_div.textContent = 'Emoción: ' + emocionEnEspanol;
+
+  let url_backend = document.getElementById('url_backend').value;
+
+  if (!url_backend) {
+    return;
+  }
+
+  fetch(url_backend, {
+    method: 'post',
+    body: JSON.stringify({ 'emotion': emocionEnIngles }),
+    headers: {
+      'Content-Type': 'applications/json'
+    }
+  }).then(function (response) {
+    return response.text();
+  }).then(function (text) {
+    console.log(text);
+  }).catch(function (error) {
+    console.error(error);
+  })
 });
 
 const videoElement = document.getElementById('camera');
@@ -56,7 +76,6 @@ navigator.mediaDevices.getUserMedia({ video: true })
   .catch((error) => {
     console.error('Error accessing camera:', error);
   });
-
 
 const initialEmotionData = {
   Enojo: 0,
@@ -114,7 +133,6 @@ const emotionChart = new ApexCharts(document.querySelector('#emotion-histogram')
 });
 emotionChart.render();
 
-
 window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
   const emotions = evt.detail.output.emotion;
 
@@ -123,7 +141,6 @@ window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
     normalized[emotion] = (emotions[emotion] * 100).toFixed(2);
     return normalized;
   }, {});
-
 
   emotionChart.updateSeries([{
     data: Object.values(normalizedEmotions),
